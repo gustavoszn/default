@@ -125,42 +125,136 @@
   color: #e5e5e5;
 }
 
-@media (max-width: 800px) {
+/* Notebook / Laptop */
+@media (max-width: 1440px) {
   .nosso-dia-container h1 {
-    font-size: 7vw;
+    font-size: 4vw;
+  }
+
+  .profile-image {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  .profile-name {
+    font-size: 1.6vw;
+  }
+
+  .manage-button {
+    font-size: 1.4vw;
+  }
+}
+
+/* Tablet / Laptop Pequeno */
+@media (max-width: 1024px) {
+  .nosso-dia-container h1 {
+    font-size: 5vw;
+    margin-bottom: 1.8em;
+  }
+
+  .profiles-wrapper {
+    gap: 3vw;
+  }
+
+  .profile-image {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .profile-name {
+    font-size: 2vw;
+  }
+
+  .manage-button {
+    font-size: 1.8vw;
+    padding: 0.6em 1.8em;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .nosso-dia-container h1 {
+    font-size: 6vw;
     margin-bottom: 1.5em;
   }
 
   .profiles-wrapper {
     gap: 4vw;
-    margin-bottom: 5em;
+    margin-bottom: 6em;
   }
 
   .profile-image {
     width: 20vw;
     height: 20vw;
+    min-width: 100px;
+    min-height: 100px;
   }
 
   .profile-name {
-    font-size: 3vw;
+    font-size: 2.8vw;
   }
 
   .manage-button {
-    font-size: 2.5vw;
-    padding: 0.5em 1.2em;
+    font-size: 2.4vw;
+    padding: 0.6em 1.5em;
   }
 }
 
-@media (min-width: 1400px) {
+/* Mobile Grande */
+@media (max-width: 600px) {
   .nosso-dia-container h1 {
-    font-size: 3.5rem;
+    font-size: 8vw;
+    margin-bottom: 1.2em;
+  }
+
+  .profiles-wrapper {
+    gap: 6vw;
+    margin-bottom: 4em;
+  }
+
+  .profile-image {
+    width: 28vw;
+    height: 28vw;
+    min-width: 120px;
+    min-height: 120px;
   }
 
   .profile-name {
-    font-size: 1.3rem;
+    font-size: 4.5vw;
+    margin-top: 0.8em;
   }
 
   .manage-button {
-    font-size: 1rem;
+    font-size: 4vw;
+    padding: 0.7em 2em;
+  }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 400px) {
+  .nosso-dia-container h1 {
+    font-size: 9vw;
+    margin-bottom: 1em;
+  }
+
+  .profiles-wrapper {
+    gap: 8vw;
+    margin-bottom: 3em;
+  }
+
+  .profile-image {
+    width: 35vw;
+    height: 35vw;
+    min-width: 130px;
+    min-height: 130px;
+  }
+
+  .profile-name {
+    font-size: 5.5vw;
+  }
+
+  .manage-button {
+    font-size: 4.5vw;
+    padding: 0.8em 2.2em;
   }
 }
