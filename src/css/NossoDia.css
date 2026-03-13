@@ -37,13 +37,17 @@
   gap: 2vw;
   margin-bottom: 8em;
   max-width: 80%;
+  flex-direction: column;
 }
 
 .profile-card {
   cursor: pointer;
   text-align: center;
   transition: all 0.3s ease;
-  max-width: 200px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-card:hover {
