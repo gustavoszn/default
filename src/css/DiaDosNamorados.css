@@ -472,14 +472,54 @@ body {
 
 /* ===== RESPONSIVO ===== */
 
-/* Tablet Grande / Laptop Pequeno */
+/* Notebook / Laptop */
 @media (max-width: 1440px) {
   .hero-left {
     max-width: 50%;
   }
+
+  .hero-description {
+    font-size: 1.4vw;
+  }
+
+  .btn {
+    font-size: 1.2vw;
+  }
+
+  .section-title {
+    font-size: 1.8vw;
+  }
+
+  .carousel-text-title {
+    font-size: 1.3vw;
+  }
+
+  .carousel-text-date {
+    font-size: 1vw;
+  }
+
+  .carousel-text-description {
+    font-size: 1.1vw;
+  }
+
+  .footer-title {
+    font-size: 3.8vw;
+  }
+
+  .footer-text {
+    font-size: 1.7vw;
+  }
+
+  .footer-signature p {
+    font-size: 1.5vw;
+  }
+
+  .footer-name {
+    font-size: 2.2vw;
+  }
 }
 
-/* Tablet */
+/* Tablet / Laptop Pequeno */
 @media (max-width: 1024px) {
   .header {
     padding: 0 3%;
@@ -490,7 +530,7 @@ body {
   }
 
   .nav-menu a {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .hero {
@@ -498,24 +538,24 @@ body {
   }
 
   .hero-left {
-    max-width: 60%;
+    max-width: 65%;
   }
 
   .title-text {
-    font-size: 8vw;
+    font-size: 9vw;
   }
 
   .hero-description {
-    font-size: 1.6vw;
+    font-size: 2vw;
   }
 
   .btn {
-    padding: 0.8vw 2.2vw;
-    font-size: 1.2vw;
+    padding: 1vw 2.5vw;
+    font-size: 1.6vw;
   }
 
   .section-title {
-    font-size: 1.6vw;
+    font-size: 2.4vw;
   }
 
   .carousel-item {
@@ -524,27 +564,35 @@ body {
   }
 
   .carousel-text-title {
-    font-size: 1.2vw;
+    font-size: 1.6vw;
   }
 
   .carousel-text-date {
-    font-size: 0.9vw;
+    font-size: 1.2vw;
   }
 
   .carousel-text-description {
-    font-size: 0.95vw;
+    font-size: 1.3vw;
   }
 
   .footer-title {
-    font-size: 2.8vw;
+    font-size: 4.2vw;
   }
 
   .footer-text {
-    font-size: 1.3vw;
+    font-size: 2.2vw;
+  }
+
+  .footer-signature p {
+    font-size: 2vw;
+  }
+
+  .footer-name {
+    font-size: 2.8vw;
   }
 }
 
-/* Tablet Pequeno */
+/* Tablet */
 @media (max-width: 768px) {
   .header {
     height: 60px;
@@ -556,38 +604,34 @@ body {
   }
 
   .nav-menu {
-    gap: 15px;
-  }
-
-  .nav-menu a {
-    font-size: 0.85rem;
+    display: none;
   }
 
   .hero {
     height: auto;
-    min-height: 70vh;
+    min-height: 65vh;
     margin-top: 60px;
   }
 
   .hero-left {
-    max-width: 70%;
+    max-width: 80%;
   }
 
   .title-text {
-    font-size: 12vw;
+    font-size: 13vw;
   }
 
   .hero-description {
-    font-size: 2.2vw;
+    font-size: 3vw;
   }
 
   .btn {
-    padding: 1.2vw 3vw;
-    font-size: 1.8vw;
+    padding: 2vw 4vw;
+    font-size: 2.5vw;
   }
 
   .section-title {
-    font-size: 2.5vw;
+    font-size: 3.5vw;
     margin-left: 4%;
   }
 
@@ -596,45 +640,46 @@ body {
   }
 
   .carousel-row {
-    gap: 1.2vw;
+    gap: 2vw;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .carousel-item {
-    width: 22vw;
-    height: 22vw;
+    width: 30vw;
+    height: 30vw;
   }
 
   .carousel-text-box {
-    padding: 2vw;
+    padding: 3vw;
   }
 
   .carousel-text-title {
-    font-size: 1.8vw;
+    font-size: 2.8vw;
   }
 
   .carousel-text-date {
-    font-size: 1.3vw;
+    font-size: 2.2vw;
   }
 
   .carousel-text-description {
-    font-size: 1.4vw;
+    font-size: 2.4vw;
   }
 
   .footer-title {
-    font-size: 4vw;
+    font-size: 5.5vw;
   }
 
   .footer-text {
-    font-size: 1.8vw;
+    font-size: 3.2vw;
   }
 
   .footer-signature p {
-    font-size: 1.5vw;
+    font-size: 2.8vw;
   }
 
   .footer-name {
-    font-size: 2.2vw;
+    font-size: 3.8vw;
   }
 }
 
@@ -663,101 +708,101 @@ body {
 
   .hero-left {
     max-width: 90%;
-    gap: 3vw;
+    gap: 4vw;
   }
 
   .title-text {
-    font-size: 16vw;
+    font-size: 18vw;
   }
 
   .hero-description {
-    font-size: 3.8vw;
-    line-height: 1.5;
+    font-size: 4.5vw;
+    line-height: 1.6;
   }
 
   .hero-buttons {
-    gap: 2vw;
-    margin-top: 2vw;
+    gap: 3vw;
+    margin-top: 3vw;
   }
 
   .btn {
-    padding: 2.5vw 5vw;
-    font-size: 3.5vw;
-    gap: 1.5vw;
+    padding: 3.5vw 7vw;
+    font-size: 4.5vw;
+    gap: 2vw;
   }
 
   .content-section {
-    padding: 6vw 0;
-    margin-top: -8vw;
+    padding: 8vw 0;
+    margin-top: -10vw;
   }
 
   .section-title {
-    font-size: 4.5vw;
-    margin-bottom: 3vw;
+    font-size: 6vw;
+    margin-bottom: 4vw;
   }
 
   .carousel-container {
-    gap: 8vw;
+    gap: 10vw;
   }
 
   .carousel-row {
-    gap: 2vw;
+    gap: 3vw;
     justify-content: center;
   }
 
   .carousel-item {
-    width: 28vw;
-    height: 28vw;
+    width: 44vw;
+    height: 44vw;
   }
 
   .carousel-text-box {
-    padding: 3vw;
-    margin-top: 2vw;
+    padding: 4vw;
+    margin-top: 3vw;
   }
 
   .carousel-text-title {
-    font-size: 3.2vw;
-    margin-bottom: 1.5vw;
-  }
-
-  .carousel-text-date {
-    font-size: 2.5vw;
+    font-size: 4.5vw;
     margin-bottom: 2vw;
   }
 
+  .carousel-text-date {
+    font-size: 3.5vw;
+    margin-bottom: 2.5vw;
+  }
+
   .carousel-text-description {
-    font-size: 2.8vw;
-    line-height: 1.5;
+    font-size: 3.8vw;
+    line-height: 1.6;
   }
 
   .footer {
-    padding: 8vw 4%;
-    margin-top: 6vw;
+    padding: 12vw 6%;
+    margin-top: 10vw;
   }
 
   .footer-title {
-    font-size: 5.5vw;
-    margin-bottom: 4vw;
+    font-size: 10vw;
+    margin-bottom: 6vw;
   }
 
   .footer-text {
-    font-size: 3.5vw;
-    line-height: 1.7;
-    margin-bottom: 3vw;
+    font-size: 5.5vw;
+    line-height: 1.8;
+    margin-bottom: 4.5vw;
   }
 
   .footer-signature {
-    margin-top: 5vw;
-    padding-top: 4vw;
+    margin-top: 7vw;
+    padding-top: 6vw;
   }
 
   .footer-signature p {
-    font-size: 3vw;
-    margin: 1vw 0;
+    font-size: 5vw;
+    margin: 2vw 0;
   }
 
   .footer-name {
-    font-size: 4.5vw;
+    font-size: 7.5vw;
   }
 }
 
@@ -786,57 +831,57 @@ body {
   }
 
   .title-text {
-    font-size: 18vw;
+    font-size: 20vw;
   }
 
   .hero-description {
-    font-size: 4.2vw;
+    font-size: 5vw;
   }
 
   .btn {
-    padding: 3vw 6vw;
-    font-size: 4vw;
+    padding: 4vw 8vw;
+    font-size: 5vw;
   }
 
   .section-title {
-    font-size: 5vw;
-  }
-
-  .carousel-item {
-    width: 42vw;
-    height: 42vw;
-  }
-
-  .carousel-row {
-    gap: 3vw;
-  }
-
-  .carousel-text-title {
-    font-size: 3.8vw;
-  }
-
-  .carousel-text-date {
-    font-size: 3vw;
-  }
-
-  .carousel-text-description {
-    font-size: 3.2vw;
-  }
-
-  .footer-title {
     font-size: 6.5vw;
   }
 
-  .footer-text {
+  .carousel-item {
+    width: 45vw;
+    height: 45vw;
+  }
+
+  .carousel-row {
+    gap: 3.5vw;
+  }
+
+  .carousel-text-title {
+    font-size: 5vw;
+  }
+
+  .carousel-text-date {
     font-size: 4vw;
   }
 
+  .carousel-text-description {
+    font-size: 4.2vw;
+  }
+
+  .footer-title {
+    font-size: 11vw;
+  }
+
+  .footer-text {
+    font-size: 6vw;
+  }
+
   .footer-signature p {
-    font-size: 3.5vw;
+    font-size: 5.5vw;
   }
 
   .footer-name {
-    font-size: 5vw;
+    font-size: 8vw;
   }
 }
 
