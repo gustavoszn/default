@@ -702,32 +702,36 @@ body {
   }
 
   .hero {
-    min-height: 60vh;
+    min-height: 75vh;
     margin-top: 55px;
+    padding: 0 5%;
+    align-items: flex-end;
+    padding-bottom: 8vw;
   }
 
   .hero-left {
-    max-width: 90%;
-    gap: 4vw;
+    max-width: 100%;
+    gap: 3vw;
   }
 
   .title-text {
-    font-size: 18vw;
+    font-size: 13vw;
   }
 
   .hero-description {
-    font-size: 4.5vw;
+    font-size: 3.8vw;
     line-height: 1.6;
   }
 
   .hero-buttons {
     gap: 3vw;
-    margin-top: 3vw;
+    margin-top: 2vw;
+    flex-wrap: wrap;
   }
 
   .btn {
-    padding: 3.5vw 7vw;
-    font-size: 4.5vw;
+    padding: 3vw 6vw;
+    font-size: 4vw;
     gap: 2vw;
   }
 
@@ -778,29 +782,33 @@ body {
   }
 
   .footer {
-    padding: 12vw 6%;
-    margin-top: 10vw;
+    padding: 16vw 6% 20vw;
+    margin-top: 16vw;
+  }
+
+  .footer-content {
+    max-width: 100%;
   }
 
   .footer-title {
     font-size: 8vw;
-    margin-bottom: 6vw;
+    margin-bottom: 7vw;
   }
 
   .footer-text {
     font-size: 4.5vw;
-    line-height: 1.8;
-    margin-bottom: 4.5vw;
+    line-height: 1.9;
+    margin-bottom: 5vw;
   }
 
   .footer-signature {
-    margin-top: 7vw;
-    padding-top: 6vw;
+    margin-top: 9vw;
+    padding-top: 7vw;
   }
 
   .footer-signature p {
     font-size: 4.5vw;
-    margin: 2vw 0;
+    margin: 2.5vw 0;
   }
 
   .footer-name {
@@ -824,25 +832,29 @@ body {
   }
 
   .hero {
-    min-height: 55vh;
+    min-height: 75vh;
     margin-top: 50px;
+    padding: 0 5%;
+    align-items: flex-end;
+    padding-bottom: 8vw;
   }
 
   .hero-left {
-    max-width: 95%;
+    max-width: 100%;
+    gap: 3vw;
   }
 
   .title-text {
-    font-size: 20vw;
+    font-size: 14vw;
   }
 
   .hero-description {
-    font-size: 5vw;
+    font-size: 4.2vw;
   }
 
   .btn {
-    padding: 4vw 8vw;
-    font-size: 5vw;
+    padding: 3.5vw 7vw;
+    font-size: 4.2vw;
   }
 
   .section-title {
@@ -871,12 +883,20 @@ body {
     font-size: 4.2vw;
   }
 
+  .footer {
+    padding: 18vw 6% 22vw;
+    margin-top: 18vw;
+  }
+
   .footer-title {
     font-size: 9vw;
+    margin-bottom: 8vw;
   }
 
   .footer-text {
     font-size: 5vw;
+    line-height: 1.9;
+    margin-bottom: 5.5vw;
   }
 
   .footer-signature p {
