@@ -20,7 +20,8 @@
 
 html, body {
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   overflow-x: hidden;
 }
 
@@ -33,7 +34,9 @@ body {
 .dias-namorados {
   background-color: #141414;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== HEADER ===== */
@@ -782,8 +785,8 @@ body {
   }
 
   .footer {
-    padding: 16vw 6% 20vw;
-    margin-top: 16vw;
+    padding: 10vw 6% 14vw;
+    margin-top: 6vw;
   }
 
   .footer-content {
@@ -792,7 +795,7 @@ body {
 
   .footer-title {
     font-size: 8vw;
-    margin-bottom: 7vw;
+    margin-bottom: 6vw;
   }
 
   .footer-text {
@@ -802,8 +805,8 @@ body {
   }
 
   .footer-signature {
-    margin-top: 9vw;
-    padding-top: 7vw;
+    margin-top: 8vw;
+    padding-top: 6vw;
   }
 
   .footer-signature p {
@@ -884,13 +887,13 @@ body {
   }
 
   .footer {
-    padding: 18vw 6% 22vw;
-    margin-top: 18vw;
+    padding: 10vw 6% 14vw;
+    margin-top: 6vw;
   }
 
   .footer-title {
     font-size: 9vw;
-    margin-bottom: 8vw;
+    margin-bottom: 7vw;
   }
 
   .footer-text {
