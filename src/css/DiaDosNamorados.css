@@ -751,8 +751,8 @@ body {
   }
 
   .carousel-item {
-    width: 44vw;
-    height: 44vw;
+    width: 47vw;
+    height: 47vw;
   }
 
   .carousel-text-box {
@@ -781,12 +781,12 @@ body {
   }
 
   .footer-title {
-    font-size: 10vw;
+    font-size: 11vw;
     margin-bottom: 6vw;
   }
 
   .footer-text {
-    font-size: 5.5vw;
+    font-size: 6vw;
     line-height: 1.8;
     margin-bottom: 4.5vw;
   }
@@ -797,12 +797,12 @@ body {
   }
 
   .footer-signature p {
-    font-size: 5vw;
+    font-size: 5.5vw;
     margin: 2vw 0;
   }
 
   .footer-name {
-    font-size: 7.5vw;
+    font-size: 8vw;
   }
 }
 
@@ -848,8 +848,8 @@ body {
   }
 
   .carousel-item {
-    width: 45vw;
-    height: 45vw;
+    width: 47vw;
+    height: 47vw;
   }
 
   .carousel-row {
@@ -869,19 +869,19 @@ body {
   }
 
   .footer-title {
-    font-size: 11vw;
+    font-size: 12vw;
   }
 
   .footer-text {
-    font-size: 6vw;
+    font-size: 6.5vw;
   }
 
   .footer-signature p {
-    font-size: 5.5vw;
+    font-size: 6vw;
   }
 
   .footer-name {
-    font-size: 8vw;
+    font-size: 8.5vw;
   }
 }
 
