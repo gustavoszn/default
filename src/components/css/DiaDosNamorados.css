@@ -20,7 +20,6 @@
   align-items: center;
   padding: 0 4%;
   z-index: 1000;
-  will-change: transform;
 }
 
 .header-left {
@@ -279,7 +278,6 @@
   cursor: pointer;
   position: relative;
   background-color: transparent;
-  contain: layout;
   animation: carouselFloat 4s ease-in-out infinite;
   animation-delay: calc(var(--ci, 0) * 0.3s);
 }
@@ -632,7 +630,6 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  contain: strict;
 }
 .petal {
   position: absolute;
@@ -640,7 +637,6 @@
   font-size: 1rem;
   opacity: 0;
   left: calc(var(--pi) * 5.8%);
-  will-change: transform;
   animation: petalFall linear infinite;
   animation-duration: calc(9s + var(--pi) * 0.6s);
   animation-delay: calc(var(--pi) * 0.7s);
@@ -694,7 +690,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  contain: layout style;
 }
 .parabens-glow {
   position: absolute;
@@ -710,7 +705,6 @@
 }
 .parabens-icon {
   font-size: 3.5rem; margin-bottom: 1.2rem;
-  will-change: transform;
   animation: iconBounce 2.5s ease-in-out infinite;
 }
 @keyframes iconBounce {
