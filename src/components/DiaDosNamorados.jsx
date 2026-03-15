@@ -153,6 +153,7 @@ export default function DiaDosNamorados() {
   const days = useDaysTogether()
   const [videoOpen,   setVideoOpen]   = useState(false)
   const [menuOpen,    setMenuOpen]    = useState(false)
+  const [activeCard,  setActiveCard]  = useState(null)
   const musicRef = useRef(null)
   const wasPlayingRef = useRef(false)
 
@@ -181,6 +182,20 @@ export default function DiaDosNamorados() {
       </div>
 
       {videoOpen && <VideoModal onClose={closeVideo} />}
+
+      {activeCard && (
+        <div className="mcard-backdrop" onClick={() => setActiveCard(null)}>
+          <div className="mcard-sheet" onClick={e => e.stopPropagation()}>
+            <img src={activeCard.image} alt={activeCard.title} className="mcard-img" />
+            <div className="mcard-body">
+              <p className="mcard-date">{activeCard.date}</p>
+              <h3 className="mcard-title">{activeCard.title}</h3>
+              <p className="mcard-desc">{activeCard.description}</p>
+            </div>
+            <button className="mcard-close" onClick={() => setActiveCard(null)}>✕</button>
+          </div>
+        </div>
+      )}
 
       <header className="header">
         <div className="header-left">
@@ -300,7 +315,9 @@ export default function DiaDosNamorados() {
           {[memorias.slice(0,6), memorias.slice(6,12)].map((row, ri) => (
             <div key={ri} className="carousel-row">
               {row.map((m, ci) => (
-                <div key={m.id} className="carousel-item" style={{ '--ci': ri * 6 + ci }}>
+                <div key={m.id} className="carousel-item" style={{ '--ci': ri * 6 + ci }}
+                  onClick={() => setActiveCard(m)}
+                >
                   <div className="carousel-item-image">
                     <img src={m.image} alt={m.title} loading="lazy" />
                     <div className="carousel-item-label">
