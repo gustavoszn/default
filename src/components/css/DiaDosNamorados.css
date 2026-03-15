@@ -327,6 +327,8 @@
   transform: translateY(6px);
   transition: opacity 0.35s ease, transform 0.35s ease;
   pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+  border-radius: 0 0 8px 8px;
 }
 .carousel-item:hover .carousel-item-label {
   opacity: 1;
@@ -604,9 +606,9 @@
 }
 
 /* label sempre visível em touch (sem hover) */
-@media (hover: none) {
-  .carousel-item-image::after { opacity: 1; }
-  .carousel-item-label { opacity: 1; transform: translateY(0); padding: 8px 10px; }
+@media (hover: none), (max-width: 1024px) {
+  .carousel-item-image::after { opacity: 1 !important; }
+  .carousel-item-label { opacity: 1 !important; transform: translateY(0) !important; padding: 8px 10px; }
 }
 
 /* --- Mobile muito pequeno (≤360px) --- */
