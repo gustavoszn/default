@@ -121,8 +121,7 @@ export default function Quiz() {
             <>
               <div className="quiz-tag">Surpresa</div>
               <p className="quiz-intro">
-                Oi, meu amor... provavelmente estamos juntos agora e você não deve estar entendendo nada, enfim.
-                Você vai receber seu presente, mas quero que você tente adivinhar primeiro...
+                AMORZÃO, sei que você está bem ansiosa, mas vamos brincar de um negócio. Tá bom? Vamos lá...
               </p>
               <h2 className="quiz-question">
                 {wrongCount === 0 && 'O que você ganhou?'}
