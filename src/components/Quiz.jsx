@@ -10,9 +10,21 @@ const Q1_OPTIONS = [
   { id: 'e', emoji: '👜', label: 'Bolsa' },
 ]
 
-const REVEAL_TEXT = 'SIMMM! A CAMISA DOS ESQUERDISTAS!'
+const REVEAL_TEXT = 'SIMMM! A CAMISA DOS ESQUERDISTAS! 😂'
 const REVEAL_SUB  = '(como diz minha sogra)'
-const REVEAL_SUB2 = 'Nem de Corinthians eu gosto, agora de Corinthiana...'
+const REVEAL_SUB2 = ''
+
+const Q3_OPTIONS = [
+  { id: 'a', emoji: '💐', label: 'Outro buquê' },
+  { id: 'b', emoji: '🧸', label: 'Pelúcia' },
+  { id: 'c', emoji: '🍫', label: 'Chocolate' },
+  { id: 'd', emoji: '🎁', label: 'Caixinha surpresa', correct: true },
+  { id: 'e', emoji: '👑', label: 'Coroa (você merece)' },
+]
+
+const Q3_REVEAL_TEXT = 'UMA CAIXINHA SÓ PRA VOCÊ! 🎁'
+const Q3_REVEAL_SUB  = 'Cada item dentro dela tem um pedacinho da nossa história.'
+const Q3_REVEAL_SUB2 = 'Porque você merece muito mais do que eu consigo colocar numa caixa. ❤️'
 
 const PARTICLES = Array.from({ length: 20 }, (_, i) => i)
 
@@ -39,15 +51,24 @@ export default function Quiz() {
   const [phase,    setPhase]    = useState('idle')
   const [selected, setSelected] = useState(null)
   const [dead,     setDead]     = useState([])
-  const [showSub,  setShowSub]  = useState(false)
-  const [showSub2, setShowSub2] = useState(false)
-  const [burst,    setBurst]    = useState(false)
+  const [showSub,   setShowSub]   = useState(false)
+  const [showSub2,  setShowSub2]  = useState(false)
+  const [burst,     setBurst]     = useState(false)
+  const [q3Phase,   setQ3Phase]   = useState('idle')
+  const [q3Sel,     setQ3Sel]     = useState(null)
+  const [q3Dead,    setQ3Dead]    = useState([])
+  const [q3Sub,     setQ3Sub]     = useState(false)
+  const [q3Sub2,    setQ3Sub2]    = useState(false)
+  const [q3Burst,   setQ3Burst]   = useState(false)
   const startRef   = useRef(null)
   const sectionRef = useRef(null)
 
-  const mainText = useTypewriter(REVEAL_TEXT, phase === 'reveal', 48, sfx.tick)
-  const subText  = useTypewriter(REVEAL_SUB,  showSub,  36, sfx.tick)
-  const sub2Text = useTypewriter(REVEAL_SUB2, showSub2, 36, sfx.tick)
+  const mainText  = useTypewriter(REVEAL_TEXT,    phase === 'reveal',       48, sfx.tick)
+  const subText   = useTypewriter(REVEAL_SUB,     showSub,                  36, sfx.tick)
+  const sub2Text  = useTypewriter(REVEAL_SUB2,    showSub2,                 36, sfx.tick)
+  const q3Main    = useTypewriter(Q3_REVEAL_TEXT, q3Phase === 'reveal',     48, sfx.tick)
+  const q3SubTxt  = useTypewriter(Q3_REVEAL_SUB,  q3Sub,                    36, sfx.tick)
+  const q3Sub2Txt = useTypewriter(Q3_REVEAL_SUB2, q3Sub2,                   36, sfx.tick)
 
   useEffect(() => {
     const el = sectionRef.current; if (!el) return
@@ -66,6 +87,8 @@ export default function Quiz() {
       return () => clearTimeout(t)
     }
   }, [mainText, phase])
+
+
 
   useEffect(() => {
     if (showSub && subText === REVEAL_SUB) {
@@ -107,6 +130,45 @@ export default function Quiz() {
     setQ(2)
     setPhase('q2')
   }
+
+  const goQ3 = () => {
+    sfx.mystery()
+    setQ(3)
+  }
+
+  const chooseQ3 = (opt) => {
+    if (q3Phase !== 'idle' && q3Phase !== 'wrong') return
+    if (q3Dead.includes(opt.id)) return
+    sfx.click()
+    setQ3Sel(opt.id)
+    setQ3Phase('checking')
+    setTimeout(() => {
+      if (opt.correct) {
+        sfx.reveal()
+        setQ3Phase('reveal')
+      } else {
+        sfx.wrong()
+        setQ3Dead(d => [...d, opt.id])
+        setQ3Phase('wrong')
+        setTimeout(() => setQ3Sel(null), 900)
+      }
+    }, 800)
+  }
+
+  useEffect(() => {
+    if (q3Phase === 'reveal' && q3Main === Q3_REVEAL_TEXT) {
+      setQ3Burst(true)
+      const t = setTimeout(() => setQ3Sub(true), 500)
+      return () => clearTimeout(t)
+    }
+  }, [q3Main, q3Phase])
+
+  useEffect(() => {
+    if (q3Sub && q3SubTxt === Q3_REVEAL_SUB) {
+      const t = setTimeout(() => setQ3Sub2(true), 300)
+      return () => clearTimeout(t)
+    }
+  }, [q3SubTxt, q3Sub])
 
   const wrongCount = dead.length
 
@@ -188,13 +250,7 @@ export default function Quiz() {
                   {subText !== REVEAL_SUB && <span className="quiz-cursor">|</span>}
                 </p>
               )}
-              {showSub2 && (
-                <p className="quiz-reveal-sub quiz-reveal-sub2">
-                  {sub2Text}
-                  {sub2Text !== REVEAL_SUB2 && <span className="quiz-cursor">|</span>}
-                </p>
-              )}
-              {showSub2 && sub2Text === REVEAL_SUB2 && (
+              {showSub && subText === REVEAL_SUB && (
                 <button
                   className="quiz-next-btn"
                   onMouseEnter={sfx.hover}
@@ -213,6 +269,26 @@ export default function Quiz() {
           <div className="quiz-tag quiz-tag-mystery">Mistério</div>
           <h2 className="quiz-question quiz-question-q2">
             Hoje vamos dormir juntos... combinando? talvez? enfim...
+          </h2>
+          <p className="quiz-mystery-hint">olha pra trás</p>
+          <div className="quiz-mystery-dots">
+            <span /><span /><span />
+          </div>
+          <button
+            className="quiz-next-btn"
+            onMouseEnter={sfx.hover}
+            onClick={goQ3}
+          >
+            Continuar
+          </button>
+        </div>
+      )}
+
+      {q === 3 && (
+        <div className="quiz-card quiz-card-q2">
+          <div className="quiz-tag quiz-tag-mystery">Surpresa</div>
+          <h2 className="quiz-question quiz-question-q2">
+            Ainda tem mais uma coisinha...
           </h2>
           <p className="quiz-mystery-hint">olha pra trás</p>
           <div className="quiz-mystery-dots">

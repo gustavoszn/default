@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react'
 import './css/MusicPlayer.css'
+import getYou   from '../assets/Daniel Caesar - Get You (Lyrics) ft. Kali Uchis.mp3'
 import ordinary from '../assets/Alex Warren - Ordinary (Official Video) - Alex Warren (youtube).mp3'
 import sorte    from '../assets/Sorte - Caetano Veloso & Gal Costa (1985) - George Kaplan (youtube).mp3'
 import seraAmor from '../assets/Será que é amor (Ao vivo) - Arlindo Cruz (youtube).mp3'
 import aindaBem from '../assets/Thiaguinho_-_Ainda_Bem_DVD_Ousadia_e_Alegria_Vdeo_Oficial.mp4'
 
 const PLAYLIST = [
+  { title: 'Get You',         artist: 'Daniel Caesar', src: getYou  },
   { title: 'Ordinary',        artist: 'Alex Warren',  src: ordinary },
   { title: 'Sorte',           artist: 'Gal Costa',    src: sorte    },
   { title: 'Será Que É Amor', artist: 'Arlindo Cruz', src: seraAmor },
@@ -29,7 +31,7 @@ const MusicPlayer = forwardRef(function MusicPlayer(_, ref) {
   const [playing,  setPlaying]  = useState(false)
   const [pos,      setPos]      = useState(0)
   const [dur,      setDur]      = useState(0)
-  const [vol,      setVol]      = useState(20)
+  const [vol,      setVol]      = useState(14)
   const [muted,    setMuted]    = useState(false)
   const [showList, setShowList] = useState(false)
 
