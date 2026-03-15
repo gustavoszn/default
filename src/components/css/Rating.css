@@ -1,0 +1,97 @@
+.rating-section {
+  position: relative;
+  padding: 5vw 4%;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.rating-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rating-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 200px;
+  background: radial-gradient(ellipse, rgba(229,9,20,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.rating-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.rating-label {
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: #888;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.rating-star {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,0.12);
+  transition: color 0.15s, transform 0.15s;
+  line-height: 1;
+  padding: 0;
+  font-family: inherit;
+}
+.rating-star:hover { transform: scale(1.2); }
+.rating-star-on { color: #f59e0b; }
+.rating-star-static { cursor: default; }
+.rating-star-static.rating-star-on {
+  animation: starPop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.rating-stars .rating-star-static:nth-child(1) { animation-delay: 0.05s; }
+.rating-stars .rating-star-static:nth-child(2) { animation-delay: 0.12s; }
+.rating-stars .rating-star-static:nth-child(3) { animation-delay: 0.19s; }
+.rating-stars .rating-star-static:nth-child(4) { animation-delay: 0.26s; }
+.rating-stars .rating-star-static:nth-child(5) { animation-delay: 0.33s; }
+@keyframes starPop {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.rating-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.rating-thanks {
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  color: #aaa;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .rating-section { padding: 10vw 6%; }
+}
